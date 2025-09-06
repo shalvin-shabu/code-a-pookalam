@@ -1,10 +1,10 @@
 import turtle
-turtle.tracer(0, 0)   # turn off animation
+turtle.tracer(0, 0)   
 
 turtle.speed(0)
 turtle.bgcolor("#EBEBEB")
 
-# Your custom color layers
+
 colors =[ 
     ["#800000", "#FF9220", "#FFD700", "white", "white", "white", "white", "#FFD700", "#FF9220", "#800000"],
     ["black", "#800000", "#FF9220", "#FFD700", "white", "white", "#FFD700", "#FF9220", "#800000", "black"],
@@ -21,7 +21,7 @@ colors =[
 ]
 
 
-# Function to draw layered wedges
+
 def draw_layered_pookalam(radius, colors, parts):
     angle = 360 / parts
     layers = len(colors)
@@ -36,7 +36,7 @@ def draw_layered_pookalam(radius, colors, parts):
             turtle.setheading(angle * i)
             turtle.pendown()
 
-            # pick color from layer
+           
             color = colors[layer][i % len(colors[layer])]
             turtle.color(color, color)
 
@@ -56,22 +56,22 @@ def draw_layered_pookalam(radius, colors, parts):
             turtle.forward(outer_r)
             turtle.end_fill()
 
-# Draw
+
 draw_layered_pookalam(300, colors, 60)
 
 turtle.hideturtle()
-# Draw small purple circle at center
+
 turtle.penup()
-turtle.goto(0, -30)  # move to bottom of circle (6cm = 60px)
+turtle.goto(0, -30)  
 turtle.pendown()
 turtle.color("#950019", "#950019")
 turtle.begin_fill()
-turtle.circle(30)  # 6 cm → 60 px
+turtle.circle(30) 
 turtle.end_fill()
 
-# Draw smaller white circle inside
+
 turtle.penup()
-turtle.goto(0, -20)  # 5cm = 50px
+turtle.goto(0, -20)  
 turtle.pendown()
 turtle.color("white", "white")
 turtle.begin_fill()
@@ -79,4 +79,4 @@ turtle.circle(20)
 turtle.end_fill()
 
 turtle.done()
-turtle.update()       # render final design
+turtle.update()    
